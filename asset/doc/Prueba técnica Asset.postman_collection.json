@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "2610c5e4-9ea4-4853-b13b-04985c3a6596",
+		"name": "Prueba técnica Asset",
+		"description": "Collection para la prueba técnica Asset de Inditex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41328597"
+	},
+	"item": [
+		{
+			"name": "Get asset ASC ordering 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mgmt/1/assets/?uploadDateStart=2024-01-01T09:00:00&uploadDateEnd=2025-02-01T09:00:00&filename=&filetype&sortDirection=ASC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mgmt",
+						"1",
+						"assets",
+						""
+					],
+					"query": [
+						{
+							"key": "uploadDateStart",
+							"value": "2024-01-01T09:00:00"
+						},
+						{
+							"key": "uploadDateEnd",
+							"value": "2025-02-01T09:00:00"
+						},
+						{
+							"key": "filename",
+							"value": ""
+						},
+						{
+							"key": "filetype",
+							"value": null
+						},
+						{
+							"key": "sortDirection",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get asset DESC ordering 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mgmt/1/assets/?uploadDateStart=2024-01-01T09:00:00&uploadDateEnd=2025-02-01T09:00:00&filename=&filetype&sortDirection=DESC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mgmt",
+						"1",
+						"assets",
+						""
+					],
+					"query": [
+						{
+							"key": "uploadDateStart",
+							"value": "2024-01-01T09:00:00"
+						},
+						{
+							"key": "uploadDateEnd",
+							"value": "2025-02-01T09:00:00"
+						},
+						{
+							"key": "filename",
+							"value": ""
+						},
+						{
+							"key": "filetype",
+							"value": null
+						},
+						{
+							"key": "sortDirection",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get asset 400",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mgmt/1/assets/?uploadDateStart=2025-01-01T09:00:00&uploadDateEnd=2025-02-01T09:00:00&filename=&filetype&sortDirection=wrong",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mgmt",
+						"1",
+						"assets",
+						""
+					],
+					"query": [
+						{
+							"key": "uploadDateStart",
+							"value": "2025-01-01T09:00:00"
+						},
+						{
+							"key": "uploadDateEnd",
+							"value": "2025-02-01T09:00:00"
+						},
+						{
+							"key": "filename",
+							"value": ""
+						},
+						{
+							"key": "filetype",
+							"value": null
+						},
+						{
+							"key": "sortDirection",
+							"value": "wrong"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload asset 202",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filename\": \"ferret.jpg\",\r\n    \"encodedFile\": \"asdfgssddddd\",\r\n    \"contentype\" : \"jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/mgmt/1/assets/actions/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mgmt",
+						"1",
+						"assets",
+						"actions",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
